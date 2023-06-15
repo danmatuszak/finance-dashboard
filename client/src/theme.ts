@@ -38,6 +38,15 @@ export const tokens = {
     // purple
     500: "#8884d8",
   },
+  // green: {
+  //   primary: "#276460",
+  //   primary_light: "#a1e1b9",
+  //   primary_dark: "#12332f",
+  //   secondary: "#d2ebe9",
+  //   text: "#1a3e55",
+  //   text_dark: "#122033",
+  //   text_white: "#f0f6fa",
+  // },
   background: {
     light: "#2d2d34",
     main: "#1f2026",
