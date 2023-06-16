@@ -4,7 +4,7 @@ import FlexBetween from '@/components/FlexBetween';
 import { useGetKpisQuery, useGetProductsQuery, useGetTransactionsQuery } from '@/state/api';
 import { Box, Typography, useTheme } from '@mui/material';
 import { DataGrid, GridCellParams } from '@mui/x-data-grid';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import { Cell, Pie, PieChart, Tooltip } from 'recharts';
 
 const Row3 = () => {
@@ -65,7 +65,6 @@ const Row3 = () => {
       field: "buyer",
       headerName: "Buyer",
       flex: 0.67,
-      renderCell: (params: GridCellParams) => params.value,
     },
     {
       field: "amount",
@@ -157,7 +156,9 @@ const Row3 = () => {
         />
         <FlexBetween mt="0.5rem" gap="0.5rem" p="0 1rem" textAlign="center">
           {pieChartData?.map((data, index) => (
-            <Box key={`${data[0].name}-${index}`}>
+            <Box 
+              sx={{ height: '100px', maxHeight: '50%'}}
+              key={`${data[0].name}-${index}`}>
               <PieChart
                 width={110}
                 height={100}>
@@ -171,7 +172,7 @@ const Row3 = () => {
                 >
                   {data.map((entry, index) => (
                     <Cell
-                      key={`cell-${index}`}
+                      key={`cell-${index}-${entry.name}`}
                       fill={pieColors[index]} />
                   ))}
                 </Pie>

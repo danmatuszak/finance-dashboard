@@ -2,20 +2,19 @@ import DashboardBox from '@/components/DashboardBox';
 import FlexBetween from '@/components/FlexBetween';
 import { useGetKpisQuery } from '@/state/api';
 import { Box, Button, Typography, useTheme } from '@mui/material';
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { ResponsiveContainer, LineChart, CartesianGrid, XAxis, YAxis, Legend, Line, Label, Tooltip } from 'recharts';
 import regression, { DataPoint } from "regression";
 
-type Props = {}
-
-const Predictions = (props: Props) => {
+const Predictions = () => {
   const { palette } = useTheme();
   const [isPredictions, setIsPredictions] = useState(false);
   const { data: kpiData } = useGetKpisQuery();
 
-  const formattedData: Array<DataPoint> = useMemo(() => {
+  const formattedData = useMemo(() => {
     if (!kpiData) return [];
     const monthData = kpiData[0].monthlyData;
+
     const formatted: Array<DataPoint> = monthData.map(
       ({ revenue }, i: number) => {
         return [i, revenue]
