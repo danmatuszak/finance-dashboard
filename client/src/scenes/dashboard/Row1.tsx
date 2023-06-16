@@ -19,6 +19,9 @@ import DashboardBox from '@/components/DashboardBox';
 import BoxHeader from '@/components/BoxHeader';
 
 const Row1 = () => {
+  // redux toolkit query allows us to call it only once if the 
+  // info is already there
+  // updates when we invalidate that particular tag with another api call
   const { data } = useGetKpisQuery();
   const { palette } = useTheme();
 
@@ -130,7 +133,7 @@ const Row1 = () => {
             data={revenueProfit}
             margin={{
               top: 20,
-              right: 0,
+              right: -30,
               left: -10,
               bottom: 55,
             }}

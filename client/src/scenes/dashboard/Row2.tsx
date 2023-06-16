@@ -43,8 +43,6 @@ const Row2 = () => {
       })
     );
   }, [operationalData]);
-  
-  console.log("🚀 row 2 data:", operationalData)
 
   const productExpenseData = useMemo(() => {
     return (
@@ -71,7 +69,7 @@ const Row2 = () => {
             data={operationalExpenses}
             margin={{
               top: 20,
-              right: 0,
+              right: -30,
               left: -10,
               bottom: 55,
             }}
@@ -137,8 +135,13 @@ const Row2 = () => {
                     fill={pieColors[index]} />
                 ))}
               </Pie>
+              <Tooltip />
             </PieChart>
-            <Box ml="-0.7rem" flexBasis="40%" textAlign="center"> {/* flexBasis = width*/}
+            <Box
+              mt="0.5rem"
+              ml="-0.7rem" 
+              flexBasis="40%"
+              textAlign="center"> {/* flexBasis = width*/}
               <Typography variant="h5">Target Sales</Typography>
               <Typography m="0.3rem 0" variant="h3" color={palette.primary[300]}>
                 83

@@ -15,6 +15,7 @@ const gridTemplateLargeScreens = `
   "d h i"
   "g h i"
   "g h j"
+  "g h j"
 `
 
 const gridTemplateSmallScreens = `
@@ -45,6 +46,7 @@ const gridTemplateSmallScreens = `
   "h"
   "i"
   "i"
+  "j"
   "j"
 `
 
