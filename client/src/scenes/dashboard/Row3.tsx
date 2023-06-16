@@ -156,7 +156,9 @@ const Row3 = () => {
         />
         <FlexBetween mt="0.5rem" gap="0.5rem" p="0 1rem" textAlign="center">
           {pieChartData?.map((data, index) => (
-            <Box key={`${data[0].name}-${index}`}>
+            <Box 
+              sx={{ height: '100px', maxHeight: '50%'}}
+              key={`${data[0].name}-${index}`}>
               <PieChart
                 width={110}
                 height={100}>
@@ -168,9 +170,9 @@ const Row3 = () => {
                   paddingAngle={2}
                   dataKey="value"
                 >
-                  {data.map((index) => (
+                  {data.map((entry, index) => (
                     <Cell
-                      key={`cell-${index}`}
+                      key={`cell-${index}-${entry.name}`}
                       fill={pieColors[index]} />
                   ))}
                 </Pie>
