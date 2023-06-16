@@ -35,7 +35,7 @@ app.use('/transaction', transactionRoutes);
 console.log('hello from server')
 
 /* MONGOOSE CONNECTION */
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 9000;
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
