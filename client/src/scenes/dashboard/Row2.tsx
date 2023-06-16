@@ -3,7 +3,7 @@ import DashboardBox from '@/components/DashboardBox';
 import FlexBetween from '@/components/FlexBetween';
 import { useGetKpisQuery, useGetProductsQuery } from '@/state/api';
 import { Box, Typography, useTheme } from '@mui/material';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import {
   ResponsiveContainer,
   LineChart,
@@ -11,8 +11,7 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Legend,
-  Line, 
+  Line,
   Cell,
   Pie,
   PieChart,
@@ -129,7 +128,7 @@ const Row2 = () => {
                 paddingAngle={2}
                 dataKey="value"
               >
-                {pieData.map((entry, index) => (
+                {pieData.map((index) => (
                   <Cell
                     key={`cell-${index}`}
                     fill={pieColors[index]} />
